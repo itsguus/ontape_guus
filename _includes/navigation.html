@@ -1,0 +1,50 @@
+<input type="checkbox" class="hamb mobile">
+<div class="mobile" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<header>
+    <address>
+        <ul>
+            {% assign mail = site.data.navigation.premenu.email %}
+            {% assign tel = site.data.navigation.premenu.tel %}
+            <li><a class="link" href="mailto:{{ mail }}">{{ mail }}</a></li>
+            <li><a class="link" href="tel:{{ tel }}">{{ tel }}</a></li>
+        </ul>
+        <nav>
+            <ul>
+                <li><a class="link" href="/nl/" {% if lang == 'nl' %} class="active" {% endif %} >NL</a></li>
+                <li><a class="link" href="/en/" {% if lang == 'en' %} class="active" {% endif %} >EN</a></li>
+            </ul>
+        </nav>
+    </address>
+    <nav>
+        <ul>
+            <li class="logo"><a href="/{{ lang }}"><img src="/img/logo.png" alt="Ontape logo"></a></li>
+            {% for item in site.data.navigation.mainmenu[lang] %}
+                <li {% if page.url contains item.url %} class="active"{% endif %}><a class="link" href="{{ item.url }}">{{ item.title }}</a>
+                    {% if item.title == transl.professionals[lang] %}
+                        <ul class="sub">
+                            {% for i in site.data.navigation.submenu_professionals[lang] %}
+                                <li {% if page.url contains i.url %} class="active" {% endif %}><a class="link" href="{{ i.url }}">{{ i.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% elsif item.title == transl.ons_verhaal[lang] %}
+                        <ul class="sub">
+                            {% for i in site.data.navigation.submenu_professionals[lang] %}
+                                <li {% if page.url contains i.url %} class="active" {% endif %}><a class="link" href="{{ i.url }}">{{ i.title }}</a></li>
+                            {% endfor %} 
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+            <li class="lang mobile">
+                    <a class="link {% if lang == 'nl' %}active {% endif %}" href="/nl/"  >NL</a>
+                    <a class="link {% if lang == 'en' %}active {% endif %}" href="/en/"  >EN</a>
+            </li>
+        </ul>
+    </nav>
+    <a class="logo mobile" href="/{{ lang }}"><img src="/img/logo.png" alt="Ontape logo"></a>
+</header>
+<main>

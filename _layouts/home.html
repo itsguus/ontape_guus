@@ -1,0 +1,54 @@
+{% include header.html %}
+
+<section class="introduction fullscreen" style="background: url('{{ page.image }}') center center / cover">
+    <hgroup>
+        <h1>{{ page.h1 }}</h1>
+        <h2>{{ page.h2 }}</h2>
+    </hgroup>
+    <span class="grad"></span>
+</section>
+
+<section class="second">
+    <h2 class="std">{{ page.second_block.header_text }}</h2>
+    <article>
+        {{ page.second_block.markdown | markdownify }}
+    </article>
+</section>
+
+<section class="icons">
+    <ul>
+        {% for item in page.icons limit: 4 %}
+        <li>
+            <img src="{{ item.image }}" alt="{{ item.image_alt }}">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="quote">
+    <h2 class="std">{{ page.third_block.header_text }}</h2>
+    <div>
+        <figure>
+            <div class="phone">
+                <img src="/img/iphone.png" alt="image of an iphone">
+                <div class="viewport">
+                    <p>Hoi</p>
+                    <p>Hoi</p>
+                    <p>Hoi</p>
+                    <p>Hoi</p>
+                    <p>Hoi</p>
+                    <p>Hoi</p>
+                    <p>Hoi</p>
+                    <p>Hoi</p>
+                    <p>Hoi</p>
+                </div>
+            </div>
+            <div class="shadow"></div>
+        </figure>
+    </div>
+</section>
+
+<div style="height: 2000px"></div>
+{% include footer.html %}

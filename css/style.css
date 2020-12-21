@@ -1,0 +1,199 @@
+/* CSS RESET */
+* {padding: 0; margin: 0;  border: 0;}
+html {font-size: 16px; scroll-behavior: smooth;}
+
+body {font-size: 1rem; color: #003d71; line-height: 1.4; font-family: "Open Sans"; font-weight: 300; background-color: #FFF;}
+a {text-decoration: none; color: #003d71;}
+ul, ol {list-style-type: none;}
+p {margin-bottom: 1.4em;}
+br {margin:0 !important; color: #003d71; color: #add0ed; color: #b5c9d0; color: #ececea; color: #f7fcfc}
+address, strong, em { font-style: normal; }
+
+/* HEADERS */
+h1,h2,h3,h4 {font-weight: bold; margin-bottom: 0.25rem; font-family: "Open Sans";}
+h1 { font-size: 5vw;}
+h2 {font-size: 4.5vw;}
+h3 {font-size: 1.2rem;}
+h4 {font-size: 1.2rem;}
+
+@media only screen and (min-width: 800px) {
+    h1 {font-size: 4vw;}
+    h2 {font-size: 3.5vw;}
+}
+@media only screen and (min-width: 1000px) {
+    h1 {font-size: 2rem;}
+    h2 {font-size: 1.65rem;}
+}
+@media only screen and (min-width: 1300px) {
+    h1 {font-size: 3vw;}
+    h2 {font-size: 2.5vw;}
+} 
+@media only screen and (min-width: 2000px) {
+    h1 {font-size: 3rem;}
+    h2 {font-size: 2.4rem;}
+}
+
+/* GENERAL */
+
+header, main, footer {position: relative; display: flex; flex-direction: column; align-items: center;}
+section  {position: relative; max-width: 80rem; margin: 2rem 1rem; width: calc(100% - 4rem);}
+section.fullscreen {width: 100%; max-width: 100%;}
+section.fullscreen > * {width: calc(100% - 4rem); margin: 0 auto; max-width: 80rem;}
+figure { position: relative;}
+figure img, figure video {object-fit: cover; width:100%;height:100%; position: absolute; top: 0; left: 0;}
+.displayNone {display: none !important;}
+.mobile { display: none;}
+
+select:focus {border: none; outline: none;}
+select { background: #FFF; }
+
+@media only screen and (max-width: 1000px) {
+    section { width: calc(100% - 2rem);}
+    section.fullscreen > * { width: calc(100% - 2rem);}
+}
+
+/* LINK HOVERS */
+/* a.link { display: inline-block; position: relative; }
+a.link::before {content:'\2192'; display: block; bottom: -0.2rem; right: 0; position: absolute;  opacity: 0; pointer-events: none; transition: 300ms ease;  margin-right: 50%;}
+a.link:hover::before {opacity: 1; margin-right: 0.5rem;} */
+
+/* MENU */
+header {z-index: 2; position: absolute; width: 100%;}
+header nav .hamburger,
+header nav input.hamb {display: none;}
+header ul li a { color: #FFF;}
+
+header > nav, 
+header > address {display: flex; max-width: 80rem; width: calc(100% - 4rem);}
+/* ADRESS IS PREHEADER */
+header address {justify-content: flex-end; margin-top: 1rem; font-size: 0.7rem; }
+header address ul {display: flex; margin-left: 6rem;}
+header address > ul li {margin-left: 6rem;}
+header address > ul li:first-of-type {margin-left: 0rem;}
+header address > nav ul li {margin-left: 0.5rem; }
+header address > nav ul li a {text-transform: uppercase; }
+
+/* NAV IS MAINMENU */
+header > nav ul { display: flex; width: 100%; justify-content: space-between; margin-top: 1rem; align-items: flex-start;}
+header > nav ul li {margin-left: 5%; position: relative;}
+header > nav ul li a { text-transform: lowercase; padding: 0.5rem; margin-top: -0.5rem;  font-weight: 400;}
+header > nav ul li:last-of-type a {padding-right: 0; }
+header > nav ul li.logo {margin-right: auto; margin-left: 0;}
+header > nav ul li.logo img {width: 18rem;}
+header > a.logo.mobile {margin-top: 1rem;  margin-left: 1rem; align-self: flex-start;}
+header > a.logo.mobile img {width: 10rem;;}
+
+@media only screen and (min-width: 1000px) {
+    header > nav ul.sub { flex-direction: column; position: absolute; margin: 0.15rem 0 0 0;  width: 200%;}
+    header > nav ul.sub li{margin: 0.25rem 0 0 0;}
+    header > nav ul.sub li a {font-weight: 300;}
+
+    header > nav ul.sub {height: 0; overflow: hidden; transition: 500ms ease; justify-content: flex-start;}
+    header > nav li:hover ul.sub {height: 6rem; }
+}
+
+@media only screen and (max-width: 1200px) {
+    header address ul  {margin-left: 3rem;}
+    header address > ul li {margin-left: 3rem;}
+    header > nav ul li {margin-left: 2%;}
+}
+
+@media only screen and (max-width: 1000px) {
+    .mobile { display: block;}
+
+    header > address > nav {display: none;}
+    header address > ul li {margin-left: 1.5rem;}
+
+    header > nav, header > address {width: calc(100% - 2em);}
+    input.hamb {display: block; position: fixed; right: 1rem; top: 1rem; z-index: 99; height: 1.5rem; width: 1.5rem; opacity: 0;}
+    #hamburger { position: fixed; right: 1rem; top: 1rem;  display: flex; flex-direction: column; align-items: flex-end; transition: 500ms ease; z-index: 98; mix-blend-mode: difference;}
+    input.hamb, #hamburger {transform: translateY(2rem);}
+    .dropMenu input.hamb, .dropMenu #hamburger { transform: translateY(0);}
+
+    #hamburger span {height: 0.15rem; background: #FFF; display: block; margin-bottom: 0.3rem; transition: 250ms ease;}
+    #hamburger span:nth-of-type(1) {width:1.4rem; margin-top: 0.2rem;}
+    #hamburger span:nth-of-type(2) {width:1.1rem;}
+    #hamburger span:nth-of-type(3) {width:0.8rem;}    
+    
+    input.hamb:checked ~ div#hamburger {top: 2rem; right: 0.7rem; transform: translateY(0); mix-blend-mode: normal;}
+    input.hamb:checked ~ div#hamburger span {background: #003d71}
+    input.hamb:checked {top: 2rem; transform: translateY(0); }
+
+    input.hamb:checked ~ div#hamburger span:nth-of-type(2) {width:0rem; margin-right: 5.5rem; opacity: 0;}
+    input.hamb:checked ~ div#hamburger span:nth-of-type(3) {width:1.4rem; transform: rotate(-45deg); transform-origin: bottom right; margin-top: -0.95rem; margin-right: 0.4rem;}
+    input.hamb:checked ~ div#hamburger span:nth-of-type(1) {width:1.4rem; margin-top: 0.2rem; transform: rotate(45deg); transform-origin: top left;}
+
+
+    header > nav > ul::before {content:""; display: block; width: 100vw; height: 100vh; background: #ececea; position: fixed; top:-2rem; left: -1rem; margin: 0; transform: translateX(-100%); transition:transform  500ms ease;  opacity: 0; visibility: hidden;}
+    header > nav > ul{  margin-top: 2rem; position: fixed; transform:translateX(-100%);  transition: transform 500ms ease;  z-index: 97; visibility: hidden; opacity: 0;}
+    header > nav > ul > li:first-of-type {margin-bottom: 2rem;}
+    header > nav ul { flex-direction: column; margin-top: 0;}
+    header > nav ul li { margin-bottom: 0.5rem;  z-index: 2;}
+    header > nav ul li:last-of-type { margin-bottom: 0}
+    header > nav ul li a {color: #003d71;}
+
+    header > nav ul li.lang { align-self: flex-end; margin: 8rem 2rem 0 0; }
+    header > nav ul li.lang a.active {font-weight:400;}
+
+    header > nav ul.sub {margin-left: 1rem; margin-top: 0.5rem;}
+    header > nav ul.sub li a {font-weight: 300;}
+    
+    input.hamb:checked ~ header > nav > ul {transform: translateX(0); visibility: visible; opacity: 1;}
+    input.hamb:checked ~ header > nav > ul::before {transform: translateX(0); visibility: visible; opacity: 1;}
+
+    header > nav ul li.logo {margin-left: 1rem;}
+    header > nav ul li.logo img {width: 10rem;}
+}
+
+/* HOME */
+section.introduction { height: 90vh; margin-top: 0; display: flex; align-items: center;}
+section.introduction .grad  {display: block; position: absolute; bottom: 0; height: 0%; width: 100%; max-width: 100%; background: linear-gradient(0deg, #FFF 0%, transparent 100%);}
+section.introduction h1,
+section.introduction h2 { color: #FFF;}
+section.introduction h2 {font-weight: 300;}
+
+section.second {display: flex; justify-content: space-between;}
+section.second > * {width: calc(50% - 2rem);}
+h2.std {font-size: 1.8rem; }
+
+section.icons ul {display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-gap: 2rem; margin-top: 4rem;}
+section.icons ul li {display: flex; flex-direction: column;}
+section.icons ul li img {width: 50%; align-self: center; margin-bottom: 2rem;}
+section.icons ul li h3 {font-size: 1.7rem; font-weight: 600; margin-bottom: 1rem;}
+section.icons ul li p {text-align:justify;}
+
+@media only screen and (max-width: 1000px) {
+    section.icons ul li h3 {font-size: 2.7vw; }
+}
+
+@media only screen and (max-width: 800px) {
+    section.second {flex-direction: column;}
+    h2.std {font-size: 1.2rem; }
+    section.second > * {width: 100%; max-width: 40rem; margin: 0 auto 2rem auto;}
+    
+    section.icons ul { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; grid-gap: 4rem; max-width: 30rem; margin: 0 auto;}
+    section.icons ul li h3 {font-size: 1.7rem; }
+}
+
+@media only screen and (max-width: 500px) {
+    section.icons ul { display: flex; flex-direction: column; max-width: 15rem;}
+}
+
+section.quote {margin-top: 6rem; display: flex; align-items: center;}
+section.quote > div {margin: 0 8rem;}
+section.quote figure {width: 19rem; flex-grow: 0; flex-shrink: 0; height:28rem; transform: rotate(-20deg); animation: phoneBounce 4s ease infinite; }
+section.quote figure img {object-fit: initial; width: 100%; height: auto;}
+section.quote figure .viewport {position: absolute; border: 1px solid black; width: 53%; height: 50%; transform: skew(11deg, -1deg); left: 20%; top: 10%;  overflow: scroll; background: white;}
+section.quote figure .shadow {position: absolute; bottom: -45%; left: -20%; border-radius: 50%; width: 100%; height: 0; padding-bottom: 100%; background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0) 70%); transform: rotate(20deg) scaleY(0.15); animation: shadowGrow 4s ease infinite;}
+
+@keyframes phoneBounce {
+    0% { transform: rotate(-20deg) translateY(0rem)}
+    50% { transform: rotate(-20deg) translateY(1rem)}
+    100% { transform: rotate(-20deg) translateY(0rem)}
+}
+
+@keyframes shadowGrow {
+    0% { transform: rotate(20deg) translateY(1rem) scaleY(0.15) }
+    50% { transform: rotate(20deg) translateY(0rem) scaleY(0.15) scaleX(1.2) }
+    100% { transform: rotate(20deg) translateY(1rem) scaleY(0.15) }
+}

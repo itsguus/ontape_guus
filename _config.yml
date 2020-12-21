@@ -1,0 +1,20 @@
+title: ONTAPE
+description: Only Talented People
+url: https://www.onlytalentedpeople.nl/
+
+
+defaults:
+# GENERAL + LANG
+  - scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "page"
+      language: nl
+  - scope:
+      path: "/nl/" 
+    values:
+      language: nl
+  - scope:
+      path: "/en/" 
+    values:
+      language: en

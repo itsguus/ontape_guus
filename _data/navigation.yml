@@ -1,0 +1,58 @@
+premenu: 
+    email: bas@onlytalentedpeople.nl
+    tel: '+31612345678'
+mainmenu: 
+  nl: 
+    - title: Werkgevers
+      url: /nl/werkgevers
+    - title: Professionals
+      url:  /nl/professionals
+    - title: Vacatures 
+      url:  /nl/Vacatures
+    - title: Ons verhaal 
+      url: /nl/ons-verhaal
+    - title: Contact
+      url: /nl/contact
+  en: 
+    - title: Werkgevers
+      url: /en/werkgevers
+    - title: Professionals
+      url:  /en/professionals
+    - title: Vacatures 
+      url:  /en/Vacatures
+    - title: Ons verhaal 
+      url: /en/ons-verhaal
+    - title: Contact
+      url: /en/contact
+
+
+submenu_professionals: 
+  nl:
+    - title: Virtual assistants
+      url:  /nl/professionals/virtual-assistants
+    - title: Executive assistants
+      url: /nl/professionals/executive-assistants
+    - title: Coaching
+      url: /nl/professionals/coaching
+  en:
+    - title: Virtual assistants
+      url:  /en/professionals/virtual-assistants
+    - title: Executive assistants
+      url: /en/professionals/executive-assistants
+    - title: Coaching
+      url: /en/professionals/coaching
+
+submenu_ons_verhaal:
+  nl: 
+    - title: Coaching
+      url: /nl/ons-verhaal/coaching
+    - title: Social responsibility
+      url: /nl/ons-verhaal/social-responsibility
+    - title: Blog
+      url: /nl/blog
+    - title: Coaching
+      url: /en/our-story/coaching
+    - title: Social responsibility
+      url: /en/our-story/social-responsibility
+    - title: Blog
+      url: /en/blog
