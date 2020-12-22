@@ -34,6 +34,7 @@
             <div class="phone">
                 <img src="/img/iphone.png" alt="image of an iphone">
                 <div class="viewport">
+                    <!-- HIRE CONTENT VOOR IN HET TELEFOONTJE -->
                     <p>Hoi</p>
                     <p>Hoi</p>
                     <p>Hoi</p>
@@ -50,5 +51,45 @@
     </div>
 </section>
 
+<section class="career fullscreen w" style="background:url('{{ page.career.image }}') center center / cover">
+    <article>
+        <h2>{{ page.career.title }}</h2>
+        <h3>{{ page.career.subtitle }}</h3>
+        <p>{{ page.career.markdown | strip_html }}</p>
+        <a class="button" href=""><span>{{ transl.to_career[lang] }}</span></a>
+    </article>
+</section>
+
+<section class="mobile career">
+    <article>
+        <h2>{{ page.career.title }}</h2>
+        <h3>{{ page.career.subtitle }}</h3>
+        <p>{{ page.career.markdown | strip_html }}</p>
+        <a class="button" href=""><span>{{ transl.to_career[lang] }}</span></a>
+    </article>
+</section>
+
+<section class="clients">
+    <h2>{{ page.clients.title }}</h2>
+    <div data-counter="0">
+        <a onclick="slide(this, 'left')">&larr;</a>
+        <article class="overflower">
+            <div class="slider">
+                <div class="slider2">
+                    <ul>
+                        {% for item in page.clients.clients %}
+                        <li><img src="{{ item.image }}" alt="{{ item.title }}" title="{{ item.title }}">{{ forloop.index
+                            }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </article>
+        <a onclick="slide(this, 'right')">&rarr;</a>
+    </div>
+</section>
+
 <div style="height: 2000px"></div>
+
 {% include footer.html %}

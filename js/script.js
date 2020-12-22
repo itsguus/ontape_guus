@@ -13,7 +13,7 @@ function scrollFunction() {
     // }
     if (scrollPos > 50 && !document.querySelector("body").classList.contains("dropMenu")) document.querySelector("body").classList.add("dropMenu");
     else if (scrollPos <= 50 && document.querySelector("body").classList.contains("dropMenu")) document.querySelector("body").classList.remove("dropMenu");
-    
+
 
     // // GRADIENT BIT
     // if($("section.introduction") && !$('section.introduction').classList.contains('scrolledpast')) {
@@ -32,4 +32,34 @@ function scrollFunction() {
 window.addEventListener("scroll", scrollFunction);
 //fire when page is loaded
 setTimeout(scrollFunction, 200);
+
+
+
+
+function slide(el, direction) {
+    if (!el.parentNode.classList.contains("animating")) {
+        var counter = el.parentNode.getAttribute("data-counter");
+        el.parentNode.classList.add("animating");
+        var ul = el.parentNode.querySelector("ul"),
+            slider = el.parentNode.querySelector("div.slider"),
+            slider2 = el.parentNode.querySelector("div.slider2"),
+            mostLeft = ul.querySelector("li"),
+            mostRight = ul.querySelector("li:last-of-type");
+        if (direction == 'right') {
+            counter++;
+            ul.insertBefore(mostLeft, mostRight.nextSibling);
+            slider2.style = "transform: translateX(calc(" + 25 * counter + "% - 1rem));"
+            // slider.style = "transform: translateX(calc(" + -15 * counter + "%));"
+        }
+        else {
+            counter--;
+            ul.insertBefore(mostLeft, mostRight.nextSibling);
+            slider2.style = "transform: translateX(calc(" + ((-15 * counter) + 15) + "%));"
+            slider.style = "transform: translateX(calc(" + 15 * counter + "%));"
+        }
+        el.parentNode.setAttribute("data-counter", counter);
+        setTimeout(function () { el.parentNode.classList.remove("animating"); }, 500);
+    }
+}
+
 
