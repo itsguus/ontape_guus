@@ -23,12 +23,23 @@
     <h2>{{ transl.our_mission[lang] }}</h2>
     <p>{{ page.mission_text }}</p>
     <h2>{{ transl.our_team[lang] }}</h2>
-    <p>{{  page.team_text }}</p>
-    <ul>
-        {% for item in site.teammembers %}
-            <li></li>
-        {% endfor %}
-    </ul>
+    <p>{{ page.team_text }}</p>
+    <div>
+        <ul>
+            {% for item in site.teammembers %}
+            <li>
+                <figure class="fill{% unless item.hover_image.size < 2 %} hover_loaded{% endunless %}">
+                    <img src="{{ item.hover_image }}" alt="A picture of {{ item.title }}" class="hover">
+                    <img src="{{ item.image }}" alt="A picture of {{ item.title }}" class="top">
+                </figure>
+                <div class="fill">
+                    <h3>{{ item.title }}</h3>
+                    <span>{{ item.function[lang] }}</span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </section>
 
 {% include footer.html %}

@@ -353,10 +353,12 @@ section.course ul li { width: 10%; display: flex; justify-content: center; font-
     section.vacatures ul li  h2 { font-size: 2.5vw; }
     section.vacatures ul li .specs h3,
     section.vacatures ul li .specs {font-size: 2vw; }
-
+    
     section.vacatures ul li:hover h2 { font-size: 1rem; transform: translateY(0.5rem)}
     
     section.course ul li {font-size: 1.5rem;}
+    
+    section.team ul {margin-left: -1.5rem;}
 }
 
 @media only screen and (max-width: 500px) {
@@ -373,7 +375,7 @@ section.recruit a:hover {color: #003d71;}
 section.recruit > * {width: 20%; margin-right: 5rem;}
 section.recruit > div figure { width: 90%; height: 0; padding-bottom: 90%; border-radius: 50%; overflow: hidden; display: flex; flex-direction: column; align-items: center;}
 section.recruit > div figure img {transition: 500ms ease;}
-section.recruit > div figure:hover img.top { opacity: 0;}
+section.recruit > div figure.hover_loaded:hover img.top { opacity: 0;}
 section.recruit > div h3 { font-size: 2rem; margin-top: 1rem;}
 section.recruit > div p { font-size: 1.7rem; margin-bottom: 0;}
 
@@ -430,6 +432,32 @@ section.recruit > a:hover {color: #FFF; background: #003d71;}
     .verhaal section.text > h2 {font-size: 2.6rem;}
 }
 
+section.team {margin: 3rem 0 9rem 0;}
 section.team h2,
 section.team p {text-align: center; margin: 0 auto; max-width: 50rem;}
-section.team h2:nth-of-type(2) {margin-top: 4rem;}
+section.team h2:nth-of-type(2) {margin-top: 8rem;}
+
+section.team > div { width: 80%; margin: 0 auto;}
+section.team ul { display: flex; flex-wrap: wrap; width: calc(100% + 2rem); margin-left: calc(-2rem - 0.2%); justify-content: center; }
+section.team ul li { height: 0; padding-bottom: 30%; width: calc(33% - 4rem); margin-left: calc(4rem + 0.33%); margin-top: 4rem; position: relative;}
+
+section.team figure {height: 100%;}
+section.team figure img {transition: 500ms ease;}
+
+section.team ul li > div { display: flex; justify-content: center; align-items: center; flex-direction: column; color: #FFF;  opacity: 0; transition: 500ms ease; pointer-events: none; z-index: 2;}  
+section.team ul li h3, 
+section.team ul li span { position: relative; z-index: 2; margin-bottom: 0;}
+
+section.team ul li::before {content:""; display: block; position: absolute; top:0; left: 0; width: 100%; height: 100%; opacity: 0; background: rgba(0,0,0,0.5);  transition: 500ms ease; z-index: 1;}
+section.team ul li:hover::before {opacity: 1}
+section.team ul li:hover figure.hover_loaded img.top { opacity: 0;}
+section.team ul li:hover > div { opacity: 1; }
+
+
+@media only screen and (max-width: 1000px) {
+    section.team ul li { width: calc(49% - 2rem); padding-bottom: 50%; margin-left: calc(2rem + 0.33%); margin-top: 2rem;}
+}
+
+@media only screen and (max-width: 600px) {
+    section.team > div { width: 100%; margin: 0 auto;}
+}

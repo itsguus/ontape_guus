@@ -51,8 +51,8 @@
     {% assign recruiter = site.recruiters | where: 'slug', page.recruiter %}
     <div>
         <figure {% unless recruiter[0].hover_image.size < 2 %}class="hover_loaded"{% endunless %}>
-            <img src="{{ recruiter[0].hover_image }}" alt="A picture of {{ page.title }}" class="hover">
-            <img src="{{ recruiter[0].image }}" alt="A picture of {{ page.title }}" class="top">
+            <img src="{{ recruiter[0].hover_image }}" alt="A picture of {{ recruiter[0].title }}" class="hover">
+            <img src="{{ recruiter[0].image }}" alt="A picture of {{ recruiter[0].title }}" class="top">
         </figure>
         <h3>{{ recruiter[0].title }}</h3>
         <p>Recruiter</p>
