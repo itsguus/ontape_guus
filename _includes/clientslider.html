@@ -1,0 +1,18 @@
+<section class="clients">
+    <h2>{{ page.clients.title }}</h2>
+    <div class='infinite-slider' data-counter="0">
+        <a class="button dark left" onclick="slide(this, 'left')"><span></span></a>
+        <article class="overflower">
+            <div class="slider">
+                <div class="slider2">
+                    <ul>
+                        {% for item in page.clients.clients %}
+                        <li><img src="{{ item.image }}" alt="{{ item.title }}" title="{{ item.title }}"></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </article>
+        <a class="button dark" onclick="slide(this, 'right')"></a>
+    </div>
+</section>

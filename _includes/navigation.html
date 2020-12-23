@@ -14,8 +14,8 @@
         </ul>
         <nav>
             <ul>
-                <li><a class="link" href="/nl/" {% if lang == 'nl' %} class="active" {% endif %} >NL</a></li>
-                <li><a class="link" href="/en/" {% if lang == 'en' %} class="active" {% endif %} >EN</a></li>
+                <li><a class="link  {% if lang == 'nl' %} active" {% endif %}" href="/nl/" >NL</a></li>
+                <li><a class="link  {% if lang == 'en' %} active" {% endif %}" href="/en/" >EN</a></li>
             </ul>
         </nav>
     </address>
@@ -48,3 +48,6 @@
     <a class="logo mobile" href="/{{ lang }}"><img src="/img/logo.png" alt="Ontape logo"></a>
 </header>
 <main>
+{% unless page.layout == 'home' %}
+    {% include introduction.html %}
+{% endunless %}

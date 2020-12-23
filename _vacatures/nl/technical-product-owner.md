@@ -39,4 +39,16 @@ timeline_blocks:
     - title: Werreke
       color: '#ccc'
       hours: 7
+wat_ga_je_doen_markdown: | 
+  Een geschreven tekst kan worden gecommuniceerd door middel van drukwerk, zoals een brief, krant, tijdschriften, brochures of een boek. Voor de opkomst van de drukpers was men voor het schrijven en vermenigvuldigen van tekst aangewezen op het handschrift.
+
+  Dankzij  computers  en  het  internet  kunnen  teksten  ook  digitaal  worden  opgeslagen  en  uitgewisseld.  In  de  eerste  decennia  waren gebruikers  hiervoor  aangewezen  op  tekstverwerkers,  fysieke  opslagmedia  (zoals  de  diskette)  en  printers.  Via  het  web  is  het verspreiden van een tekst veel eenvoudiger geworden, via bijvoorbeeld e-mail, websites en sociale media.
+
+  ## Hoe is de sfeer en cultuur?
+  Een geschreven tekst kan worden gecommuniceerd door middel van drukwerk, zoals een brief, krant, tijdschriften, brochures of een boek. Voor de opkomst van de drukpers was men voor het schrijven en vermenigvuldigen van tekst aangewezen op het handschrift.
+
+  Dankzij  computers  en  het  internet  kunnen  teksten  ook  digitaal  worden  opgeslagen  en  uitgewisseld.  In  de  eerste  decennia  waren gebruikers  hiervoor  aangewezen  op  tekstverwerkers,  fysieke  opslagmedia  (zoals  de  diskette)  en  printers.  Via  het  web  is  het verspreiden van een tekst veel eenvoudiger geworden, via bijvoorbeeld e-mail, websites en sociale media.
+recruitee_url: 
+recruiter_title: Title
+recruiter: bas
 ---

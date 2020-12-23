@@ -50,3 +50,5 @@ defaults:
 collections: 
   vacatures:
     output: true
+  recruiters:
+    output: false

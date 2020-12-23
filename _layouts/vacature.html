@@ -1,12 +1,6 @@
 {% include header.html %}
 
 
-<section class="introduction fullscreen" style="background: url('{{ page.image }}') center center / cover">
-    <span class="grad"></span>
-</section>
-
-{% include breadcrumbs.html %}
-
 <section class="details">
     <h1 class="title">{{ page.title }}</h1>
     <div>
@@ -20,7 +14,7 @@
         </article>
     </div>
     <div id="timeline">
-        <h3>{{ transl.wat_ga_je_doen[lang] }}</h3>
+        <h2>{{ transl.wat_ga_je_doen[lang] }}</h2>
         <span>{{ page.workweek_hours }}{% if lang == 'en' %}&nbsp;{% endif %}{{ transl.x_urige_werkweek[lang] }}</span>
         <ul class="line" data-counter=0>
             {% for item in page.timeline_blocks %}
@@ -32,7 +26,50 @@
                 </li>
             {% endfor %}
         </ul>
+        <div class="md">
+            {{ page.wat_ga_je_doen_markdown | markdownify }}
+        </div>
     </div>
+</section>
+
+<section class="course">
+    <ul>
+        <li><img src="/img/icon.svg" alt="Icon"></li>
+        <li>&rarr;</li>
+        <li><img src="/img/icon.svg" alt="Icon"></li>
+        <li>&rarr;</li>
+        <li><img src="/img/icon.svg" alt="Icon"></li>
+        <li>&rarr;</li>
+        <li><img src="/img/icon.svg" alt="Icon"></li>
+        <li>&rarr;</li>
+        <li><img src="/img/icon.svg" alt="Icon"></li>
+    </ul>
+</section>
+
+<h2>{{ page.recruiter_title }}</h2>
+<section class="recruit">
+    {% assign recruiter = site.recruiters | where: 'slug', page.recruiter %}
+    <div>
+        <figure {% unless recruiter[0].hover_image.size < 2 %}class="hover_loaded"{% endunless %}>
+            <img src="{{ recruiter[0].hover_image }}" alt="A picture of {{ page.title }}" class="hover">
+            <img src="{{ recruiter[0].image }}" alt="A picture of {{ page.title }}" class="top">
+        </figure>
+        <h3>{{ recruiter[0].title }}</h3>
+        <p>Recruiter</p>
+    </div>
+    <ul>
+        <li>
+            <input type="checkbox">
+            <span>{{ transl.contactgegevens[lang] }}</span>
+            <ul>
+                <li><a href="https://wa.me/{{ recruiter[0].tel }}?text=Hey%20{{ recruiter[0].voornaam }}%2C">Whatsapp</a></li>
+                <li><a href="tel:{{ recruiter[0].tel | prepend: '+' }}">{{ transl.telefoon[lang] }}</a></li>
+                <li><a href="mailto:{{ recruiter[0].email }}">Mail</a></li>
+            </ul>
+        </li>
+        <li><a href="mailto:{{ recruiter[0].email }}">Stel een vraag</a></li>
+    </ul>
+    <a href="{{ page.recruitee_url }}">{{ transl.solliciteer[lang] }}</a>
 </section>
 
 {% include footer.html %}
