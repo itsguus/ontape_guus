@@ -18,3 +18,35 @@ defaults:
       path: "/en/" 
     values:
       language: en
+
+# VACATURES
+  - scope:
+      path: "_vacatures/nl/" 
+    values:
+      language: nl
+      layout: vacature
+      permalink: '/nl/vacatures/:title'
+  - scope:
+      path: "_vacatures/en/" 
+    values:
+      permalink: '/en/vacatures/:title'
+      language: en
+      layout: vacature
+
+# BLOGS
+  - scope: 
+      path: "_blogs/nl"
+    values: 
+      permalink: '/nl/blog/:title' 
+      language: nl
+      layout: post
+  - scope: 
+      path: "_blogs/en"
+    values: 
+      permalink: '/en/blog/:title' 
+      language: en
+      layout: post
+
+collections: 
+  vacatures:
+    output: true

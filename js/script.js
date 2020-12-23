@@ -45,21 +45,58 @@ function slide(el, direction) {
             slider2 = el.parentNode.querySelector("div.slider2"),
             mostLeft = ul.querySelector("li"),
             mostRight = ul.querySelector("li:last-of-type");
+
         if (direction == 'right') {
             counter++;
             ul.insertBefore(mostLeft, mostRight.nextSibling);
-            slider2.style = "transform: translateX(calc(" + 25 * counter + "% - 1rem));"
-            // slider.style = "transform: translateX(calc(" + -15 * counter + "%));"
+            slider2.style = "transform: translateX(calc(" + 25 * counter + "%));"
+            slider.style = "transform: translateX(calc(" + -25 * counter + "%));"
         }
         else {
             counter--;
-            ul.insertBefore(mostLeft, mostRight.nextSibling);
-            slider2.style = "transform: translateX(calc(" + ((-15 * counter) + 15) + "%));"
-            slider.style = "transform: translateX(calc(" + 15 * counter + "%));"
+            ul.insertBefore(mostRight, mostLeft);
+            slider2.style = "transform: translateX(calc(" + 25 * counter + "%));"
+            slider.style = "transform: translateX(calc(" + -25 * counter + "%));"
         }
         el.parentNode.setAttribute("data-counter", counter);
         setTimeout(function () { el.parentNode.classList.remove("animating"); }, 500);
     }
 }
 
+
+
+if (document.body.classList.contains("vacature")) {
+    var isMouseOver = false,
+        timelineIntervaller = setInterval(timelineInterval, 4000);
+    $("#timeline .line").addEventListener("mouseenter", function () {
+        removeAllFakeHovers();
+        isMouseOver = true;
+    })
+
+    $("#timeline .line").addEventListener("mouseleave", function () {
+        isMouseOver = false;
+    })
+    timelineInterval();
+}
+function removeAllFakeHovers() {
+    var allBlocks = document.querySelectorAll('#timeline li');
+    for (var block of allBlocks) {
+        block.classList.remove('fakehover')
+    }
+}
+
+function timelineInterval() {
+    if (!isMouseOver) {
+        var allBlocks = document.querySelectorAll('#timeline li'),
+            i,
+            counter = parseInt($('#timeline .line').getAttribute('data-counter'));
+        for (i = 0; i < allBlocks.length; i++) {
+            allBlocks[i].classList.remove('fakehover');
+        }
+        allBlocks[counter].classList.add('fakehover');
+        counter++;
+        if (counter > allBlocks.length - 1) counter = 0;
+        $('#timeline .line').setAttribute('data-counter', counter);
+    }
+}
 

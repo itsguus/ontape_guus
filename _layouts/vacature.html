@@ -1,0 +1,38 @@
+{% include header.html %}
+
+
+<section class="introduction fullscreen" style="background: url('{{ page.image }}') center center / cover">
+    <span class="grad"></span>
+</section>
+
+{% include breadcrumbs.html %}
+
+<section class="details">
+    <h1 class="title">{{ page.title }}</h1>
+    <div>
+        <article>
+            <h3>{{ transl.wat_is_vereist[lang] }}?</h3>
+            {{ page.wat_is_vereist_markdown | markdownify }}
+        </article>
+        <article>
+            <h3>{{ transl.wat_krijg_je[lang] }}?</h3>
+            {{ page.wat_krijg_je_markdown | markdownify }}
+        </article>
+    </div>
+    <div id="timeline">
+        <h3>{{ transl.wat_ga_je_doen[lang] }}</h3>
+        <span>{{ page.workweek_hours }}{% if lang == 'en' %}&nbsp;{% endif %}{{ transl.x_urige_werkweek[lang] }}</span>
+        <ul class="line" data-counter=0>
+            {% for item in page.timeline_blocks %}
+            {% assign width = item.hours | divided_by: 1.0 |  divided_by: page.workweek_hours | times: 100 %}
+                <li style="width: {{ width }}%; background: {{ item.color }}">
+                    <div>
+                        <span class="dot" style="background: {{ item.color }}"></span><span class="uren">{{ item.hours }} {{ transl.uren[lang] | downcase }} |&nbsp;</span><span>{{ item.title }}</span>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{% include footer.html %}

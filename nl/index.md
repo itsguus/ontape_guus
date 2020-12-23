@@ -50,4 +50,8 @@ clients:
       image: /img/icon.svg
     - title: Lorem
       image: /img/icon.svg
+    - title: Lorem
+      image: /img/icon.svg
+    - title: Lorem
+      image: /img/icon.svg
 ---

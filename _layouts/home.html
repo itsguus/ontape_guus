@@ -71,25 +71,20 @@
 
 <section class="clients">
     <h2>{{ page.clients.title }}</h2>
-    <div data-counter="0">
-        <a onclick="slide(this, 'left')">&larr;</a>
+    <div class='infinite-slider' data-counter="0">
+        <a class="button dark left" onclick="slide(this, 'left')"><span></span></a>
         <article class="overflower">
             <div class="slider">
                 <div class="slider2">
                     <ul>
                         {% for item in page.clients.clients %}
-                        <li><img src="{{ item.image }}" alt="{{ item.title }}" title="{{ item.title }}">{{ forloop.index
-                            }}
-                        </li>
+                        <li><img src="{{ item.image }}" alt="{{ item.title }}" title="{{ item.title }}"></li>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
         </article>
-        <a onclick="slide(this, 'right')">&rarr;</a>
+        <a class="button dark" onclick="slide(this, 'right')"></a>
     </div>
 </section>
-
-<div style="height: 2000px"></div>
-
 {% include footer.html %}

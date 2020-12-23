@@ -1,0 +1,29 @@
+{% include header.html %}
+
+<section class="introduction fullscreen" style="background: url('{{ page.image }}') center center / cover">
+    <span class="grad"></span>
+</section>
+
+{% include breadcrumbs.html %}
+
+<section class="vacatures">
+    <h1 class="title">{{ page.title }}</h1>
+    <ul >
+        {% assign vacatures = site.vacatures | where: 'language', lang %}
+        {% for item in vacatures %}
+            <li class="card" style="background: url('{{ item.grid_image }}') center center / cover">
+                <a class="fill" href="{{ item.url }}"></a>
+                <div class="content fill">
+                    <h2>{{ item.title }}</h2>
+                    <div class="specs">
+                        {% assign salary = item.salary %}
+                        {% unless salary < 1000 %} {% assign hundreds = salary | slice: -3, 3 %} {% assign salstring = salary | downcase %} {% assign length = salstring.size | minus: 3%} {% assign thousands = salary | slice: 0, length %} {% assign salary = thousands | append: "." | append: hundreds %}{% endunless %}
+                        <h3>{{ item.location }}</h3> | <span>&euro;{{ thousands }}.{{ hundreds }}</span> | <span>{{ item.workweek_hours }} {{ transl.uren[lang] | downcase }}</span>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% include footer.html %}
