@@ -37,21 +37,4 @@ career:
   subtitle: Personal, ambitious and entrepeneurial
   markdown: |
     We help our clients in addressing their most complex challenges. This is why we take great interest in both the professional and personal development of our consultants.
-clients:
-  title: Clients we are proud to work for
-  clients: 
-    - title: Lorem
-      image: /img/icon.svg
-    - title: Lorem
-      image: /img/icon.svg
-    - title: Lorem
-      image: /img/icon.svg
-    - title: Lorem
-      image: /img/icon.svg
-    - title: Lorem
-      image: /img/icon.svg
-    - title: Lorem
-      image: /img/icon.svg
-    - title: Lorem
-      image: /img/icon.svg
 ---

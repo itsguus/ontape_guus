@@ -1,0 +1,64 @@
+{% include header.html %}
+
+<section class="text">
+    <article>
+        <h1>{{ page.first_block_title }}</h1>
+        <div class="md">
+            {{ content }}
+        </div>
+    </article>
+</section>
+
+<section class="course">
+    <h2 class="title">Werkwijze</h2>
+    <div>
+        {{ page.werkwijze.textblok_markdown | markdownify }}
+    </div>
+    <ul>
+        <li><img src="/img/icon.svg" alt="Icon"></li>
+        <li>&rarr;</li>
+        <li><img src="/img/icon.svg" alt="Icon"></li>
+        <li>&rarr;</li>
+        <li><img src="/img/icon.svg" alt="Icon"></li>
+        <li>&rarr;</li>
+        <li><img src="/img/icon.svg" alt="Icon"></li>
+        <li>&rarr;</li>
+        <li><img src="/img/icon.svg" alt="Icon"></li>
+    </ul>
+</section>
+
+<section class="career fullscreen w" style="background:url('{{ page.career.image }}') center center / cover">
+    <article>
+        <h2>{{ page.career.title }}</h2>
+        <h3>{{ page.career.subtitle }}</h3>
+        <p>{{ page.career.markdown | strip_html }}</p>
+        <a class="button" href=""><span>{{ transl.to_career[lang] }}</span></a>
+    </article>
+</section>
+
+<section class="our_coaches">
+    <h2 class="title">{{ transl.onze_coaches[lang] }}</h2>
+    {% assign recruiter_one = site.recruiters | where: 'slug', page.coaches.first_recruiter %}
+    {% assign recruiter_two = site.recruiters | where: 'slug', page.coaches.second_recruiter %}
+    {% assign recruiters = recruiter_one | concat: recruiter_two %}
+
+    <div>
+        <div>
+        {% for item in recruiters %}
+            <figure {% unless item.hover_image.size < 2 %}class="hover_loaded" {% endunless %}>
+                <img src="{{ item.hover_image }}" alt="A picture of {{ item.title }}" class="hover">
+                <img src="{{ item.image }}" alt="A picture of {{ item.title }}" class="top">
+            </figure>
+        {% endfor %}
+        </div>
+        <div>
+            {{ page.coaches.markdown | markdownify  }}
+        </div>
+    </div>
+</section>
+
+{% include clientslider.html %}
+
+
+
+{% include footer.html %}

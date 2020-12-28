@@ -1,0 +1,76 @@
+{% include header.html %}
+
+<section class="text">
+    <article>
+        <h1>{{ page.first_block.title }}</h1>
+        <div class="md">
+            {{ page.first_block.markdown | markdownify }}
+        </div>
+    </article>
+</section>
+
+
+<section class="love">
+    <h2>{{ page.icons_block.title }}</h2>
+    <ul>
+        {% for item in page.icons_block.blocks %}
+        <li>
+            <img src="{{ item.image }}" alt="icon for {{ item.title }}">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="blocks fullscreen">
+    <div>
+        <h2>{{ page.third_block.title }}</h2>
+        <ul>
+            {% for item in page.third_block.blocks limit: 3 %}
+            <li>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.text }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="get_started">
+    <h2>{{ page.get_started.title }}</h2>
+    <ul>
+        <li class="nr">1</li>
+        <li>
+            <h3>{{ page.get_started.one.title }}</h3>
+            {{ page.get_started.one.list_markdown | markdownify }}
+        </li>
+        <li class="nr">2</li>
+        <li>
+            <h3>{{ page.get_started.two.title }}</h3>
+            {{ page.get_started.two.text }}
+        </li>
+        <li class="nr">3</li>
+        <li>
+            <h3>{{ page.get_started.three.title }}</h3>
+            {{ page.get_started.three.text }}
+        </li>
+    </ul>
+</section>
+
+<section class="lets_talk">
+    <div>
+        <h2>{{ page.lets_talk.title }}</h2>
+        {% assign recruiter = site.recruiters | where: 'slug', 'bas' %}
+        <figure {% unless recruiter[0].hover_image.size < 2 %}class="hover_loaded" {% endunless %}>
+            <img src="{{ recruiter[0].hover_image }}" alt="A picture of {{ recruiter[0].title }}" class="hover">
+            <img src="{{ recruiter[0].image }}" alt="A picture of {{ recruiter[0].title }}" class="top">
+        </figure>
+    </div>
+    <div>
+        {{ page.lets_talk.markdown | markdownify }}
+    </div>
+</section>
+
+
+{% include footer.html %}

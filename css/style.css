@@ -95,6 +95,7 @@ header address > nav ul li a {text-transform: uppercase; }
 header > nav ul { display: flex; width: 100%; justify-content: space-between; margin-top: 2rem; align-items: flex-start;}
 header > nav ul li {margin-left: 5%; position: relative;}
 header > nav ul li a { text-transform: lowercase; padding: 0.5rem; margin-top: -0.5rem;  font-weight: 400;}
+header > nav ul li.active a {color: #add0ed;}
 header > nav ul li:last-of-type a {padding-right: 0; }
 header > nav ul li.logo {margin-right: auto; margin-left: 0;}
 header > nav ul li.logo img {width: 18rem;}
@@ -276,10 +277,10 @@ footer section nav::before { content:""; display: block;  width: 100%; border-to
 footer section nav {width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between;}
 footer section nav img {max-width: 2rem;}
 footer section nav address {max-width: 20rem;}
-footer section nav address ul li:nth-of-type(3) { margin-bottom: 1rem;}
+footer section nav address ul li:nth-of-type(2),
 footer section nav address ul li:nth-of-type(3) { margin-bottom: 1rem;}
 
-footer section nav ul li:nth-of-type(1) h3 { text-transform: uppercase; font-size: 1rem; margin-bottom: 1rem;}
+footer section nav ul li:nth-of-type(1) h3 { text-transform: uppercase; font-size: 1rem; margin-bottom: 1.5rem;}
 footer section nav ul {margin-right: 6rem; margin-top: 2rem;}
 footer section nav ul li {font-weight: 400;}
 
@@ -291,8 +292,8 @@ footer section nav > ul:nth-of-type(1) li:nth-of-type(4) {display: inline-block;
 /* BREADCRUMBS */
 #breadcrumbs { align-self: flex-start; margin-left: 2rem;}
 
-h1.title { color: #add0ed; text-align: center;   margin-bottom: 4rem;}
-h1.title::before {content: ""; display: block; width: 3rem; border-top: 0.2rem solid #b5c9d0; margin: 1rem auto;}
+.title { color: #add0ed; text-align: center;   margin-bottom: 4rem;}
+.title::before {content: ""; display: block; width: 3rem; border-top: 0.2rem solid #b5c9d0; margin: 1rem auto;}
 
 /* VACATURES */
 section.vacatures {margin-bottom: 10rem;}
@@ -412,24 +413,24 @@ section.recruit > a:hover {color: #FFF; background: #003d71;}
     section.recruit > a { margin-top: 1rem; padding: 2rem 0.5rem;}
 }
 
-.verhaal section.text article { display: flex; justify-content: center; margin: 4rem auto;}
-.verhaal section.text article > * {width: 50%; max-width: 25rem; margin-left: 2rem;}
-.verhaal section.text.dark {color: #FFF; }
-.verhaal section.text.dark article { margin: 7rem auto;}
+section.text article { display: flex; justify-content: center; margin: 4rem auto;}
+section.text article > * {width: 50%; max-width: 26rem; margin-left: 6%;}
+section.text.dark {color: #FFF; }
+section.text.dark article { margin: 7rem auto;}
 
-.verhaal section.text .md { margin-top: 0.5rem; }
+section.text .md { margin-top: 0.5rem; }
 
 @media only screen and (max-width: 700px) {
-    .verhaal section.text article {flex-direction: column;}
-    .verhaal section.text article > * {width: calc(100% - 2rem); max-width: 100%; margin-left: 0rem;}
+    section.text article {flex-direction: column;}
+    section.text article > * {width: calc(100% - 2rem); max-width: 100%; margin-left: 0rem;}
     
-    .verhaal section.text > h1,
-    .verhaal section.text > h2 {font-size: 1.75rem;}
+    section.text > h1,
+    section.text > h2 {font-size: 1.75rem;}
 }
 
 @media only screen and (min-width: 1600px) {
-    .verhaal section.text > h1,
-    .verhaal section.text > h2 {font-size: 2.6rem;}
+    section.text > h1,
+    section.text > h2 {font-size: 2.6rem;}
 }
 
 section.team {margin: 3rem 0 9rem 0;}
@@ -460,4 +461,93 @@ section.team ul li:hover > div { opacity: 1; }
 
 @media only screen and (max-width: 600px) {
     section.team > div { width: 100%; margin: 0 auto;}
+}
+
+section.blocks { background: #ececea;}
+section.blocks > div {display: flex; margin: 7rem auto;}
+section.blocks  h2 {width: 40%; max-width: 20rem;; margin-right: 5%; font-size: 2rem; color: #add0ed;}
+section.blocks  ul {display: flex;justify-content: space-between; width: 80%; margin-top: 4rem;}
+section.blocks  ul li {max-width: 15rem;}
+
+@media only screen and (max-width: 1250px) {
+    
+    section.blocks > div { flex-wrap: wrap;}
+    section.blocks h2,
+    section.blocks ul { width: 100%;}
+    section.blocks ul {max-width: 60rem; margin-left: auto; justify-content: flex-start; flex-wrap: wrap;}
+    section.blocks ul li { margin-right: 2rem;}
+    section.blocks ul li:first-of-type {margin-left: auto;}
+    section.blocks ul li:last-of-type {margin-right: 0;}
+}
+
+@media only screen and (max-width: 850px) {
+    section.blocks ul {max-width: 60rem; flex-wrap: wrap;}
+    section.blocks ul li:first-of-type {margin-left: 0;}
+}
+
+section.love {margin: 5rem auto;}
+section.love h2 { text-align: center;}
+section.love ul {display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 4rem; margin-top: 4rem;}
+section.love ul li {display: flex; flex-direction: column; align-items: center; text-align: center;}
+section.love ul li h3 {color: #add0ed;}
+section.love ul li img {max-height: 5rem; margin-bottom: 0.5rem;}
+
+@media only screen and (max-width: 800px) {
+    section.love ul { grid-template-columns: 1fr 1fr; grid-gap: 2rem;}
+}
+
+
+section.get_started > h2::after { content: ""; display: block; width: 3rem; border-top: 0.2rem solid #add0ed; margin: 1.5rem 0 -1.5rem 0;}
+section.get_started > ul {display: flex; align-items: center;}
+section.get_started > ul li.nr  {font-size: 10rem; font-weight: 600; margin-bottom: 0.3rem; margin-right: 1rem;  width: auto;}
+section.get_started > ul li {max-width: 12rem; margin-right: 5rem;}
+section.get_started > ul li:last-of-type {margin-right: 0;}
+
+@media only screen and (max-width: 500px) {
+    section.love h2 { font-size: 1.4rem;} 
+    section.love ul { grid-template-columns: 1fr; grid-gap: 2rem;}
+    section.love ul li { max-width: 25rem; margin: 0 auto;}
+    
+    section.get_started > h2::after { margin-bottom: 1rem;}
+    section.get_started > ul li.nr  {font-size: 6rem; margin-bottom: 3.3rem}
+    section.get_started > ul > li {margin-bottom: 3rem;}
+}
+
+
+@media only screen and (max-width: 1150px) {
+    section.get_started > ul {flex-wrap: wrap;}
+    section.get_started > ul li {margin-right: calc(100% - 21.8rem); max-width: 20rem; width: 15rem;}
+}
+
+
+section.lets_talk {display: flex; justify-content: center; margin: 5rem 0 10rem 0; align-items: center;}
+section.lets_talk >  * {max-width: 30rem;}
+section.lets_talk > div:nth-of-type(1) {width: 20%; margin-right: 5rem;}
+section.lets_talk figure { margin-top: 2rem; width: 80%; height: 0; padding-bottom: 80%; border-radius: 50%; overflow: hidden; display: flex; flex-direction: column; align-items: center;}
+section.lets_talk figure img {transition: 500ms ease;}
+section.lets_talk figure.hover_loaded:hover img.top { opacity: 0;}
+
+
+section.course > div { max-width: 40rem; margin: 0 auto; margin-top: -2rem; margin-bottom: 3rem;}
+
+section.our_coaches > div { display: flex; align-items: center;}
+section.our_coaches > div > div:nth-of-type(1) { display: flex; width: 70%; position: relative; align-items: center;}
+section.our_coaches > div > div:nth-of-type(2) { width: 30%;}
+section.our_coaches figure { margin-top: 2rem; width: 35%; height: 0; padding-bottom: 35%; border-radius: 50%; overflow: hidden; display: flex; flex-direction: column; align-items: center; margin-right: 3rem;}
+section.our_coaches figure img {transition: 500ms ease;}
+section.our_coaches figure.hover_loaded:hover img.top { opacity: 0;}
+
+@media only screen and (max-width: 1000px) {
+    section.lets_talk { flex-direction: column; margin: 1rem 0 3rem 0;}
+    
+    section.lets_talk > div:nth-of-type(1) {width: 100%; margin-right: 0; max-width: 15rem; text-align: center;  margin-bottom: 2rem;}
+    section.lets_talk figure { margin-left: 10%;}
+    
+    section.our_coaches h2.title {margin-bottom: 2rem;}
+    section.our_coaches > div { flex-direction: column-reverse;}
+    section.our_coaches > div > div:nth-of-type(1) { width: 100%; max-width: 40rem; margin: 0 auto; justify-content: space-around;} 
+    section.our_coaches > div > div:nth-of-type(2) { width: 100%; max-width: 40rem; margin: 0 auto;} 
+    section.our_coaches figure { margin-right: 0; width: 42%; padding-bottom: 42%;}
+
+    
 }
